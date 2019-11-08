@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        /**
+         * Si el usuario pulsa el botón atrás mientras está mostrándose el menú del NavigationView,
+         * hacemos que se cierre dicho menú, ya que el comportamiento por defecto es cerrar la
+         * Activity.
+         */
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -43,19 +48,16 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflamos el menú de la ActionBar
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // Se ha hecho click en algún item del menú de la ActionBar
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -63,11 +65,10 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         Fragment f;
-        // Handle navigation view item clicks here.
+        // Se ha hecho click en algún item del NavigationView
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
