@@ -87,15 +87,22 @@ public class MainActivity extends AppCompatActivity
             f = new FragmentHerramientas();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
             setTitle("Herramientas");
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_share || id == R.id.nav_send){
             Bundle b = new Bundle();
             f = new FragmentPresentacion();
-            b.putString("SHARE", "Mi texto");
+            String texto = "Compartir";
+            if(id == R.id.nav_send)
+                texto = "Enviar";
+            b.putString("SHARE", texto);
             f.setArguments(b);
             getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).addToBackStack(null).commit();
-            setTitle("Compartir");
-        } else if (id == R.id.nav_send) {
-
+            //Podemos darle un nombre a addToBackStack para que luego poder acceder directamente a ese estado de la pila
+            //addToBackStack("MiEstado")
+            //getSupportFragmentManager().popBackStack("MiEstado",flag);
+            //Donde flag puede ser 0 o POP_BACK_STACK_INCLUSIVE
+            //- 0 desapila hasta llegar al estado indicado (pero sin incluirlo)
+            //- POP_BACK_STACK_INCLUSIVE desapila hasta llegar al estado indicado (incluyéndolo también)
+            setTitle(texto);
         }
 
         drawer.closeDrawer(GravityCompat.START);
