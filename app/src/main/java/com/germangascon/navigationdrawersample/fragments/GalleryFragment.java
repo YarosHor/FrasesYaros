@@ -1,4 +1,4 @@
-package com.germangascon.navigationdrawersample;
+package com.germangascon.navigationdrawersample.fragments;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -9,14 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class FragmentCamara extends Fragment {
+import com.germangascon.navigationdrawersample.R;
+
+public class GalleryFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.fragment_sample, container, false);
-        TextView tvSample = layout.findViewById(R.id.tvSample);
-        tvSample.setText("Cámara");
-        return layout;
+        return inflater.inflate(R.layout.fragment_gallery, container, false);
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NavigationDrawerSample</string>
+    <string name="camera">Cámara</string>
+    <string name="gallery">Galería</string>
+    <string name="tools">Herramientas</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Cerrar navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configuración</string>
+    <string name="social">Social</string>
+    <string name="share">Compartir</string>
+    <string name="send">Enviar</string>
+</resources>

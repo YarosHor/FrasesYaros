@@ -1,6 +1,11 @@
 package com.germangascon.navigationdrawersample;
 
 import android.os.Bundle;
+
+import com.germangascon.navigationdrawersample.fragments.CameraFragment;
+import com.germangascon.navigationdrawersample.fragments.GalleryFragment;
+import com.germangascon.navigationdrawersample.fragments.ShareFragment;
+import com.germangascon.navigationdrawersample.fragments.ToolsFragment;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.core.view.GravityCompat;
@@ -72,37 +77,40 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            f = new FragmentCamara();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
-            setTitle("Cámara");
+            f = new CameraFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_frame, f)
+                    .commit();
+            setTitle(R.string.camera);
         } else if (id == R.id.nav_gallery) {
-            f = new FragmentGaleria();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
-            setTitle("Galería");
-        } else if (id == R.id.nav_slideshow) {
-            f = new FragmentPresentacion();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
-            setTitle("Presentación");
+            f = new GalleryFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_frame, f)
+                    .commit();
+            setTitle(R.string.gallery);
         } else if (id == R.id.nav_manage) {
-            f = new FragmentHerramientas();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
-            setTitle("Herramientas");
-        } else if (id == R.id.nav_share || id == R.id.nav_send){
-            Bundle b = new Bundle();
-            f = new FragmentPresentacion();
-            String texto = "Compartir";
-            if(id == R.id.nav_send)
-                texto = "Enviar";
-            b.putString("SHARE", texto);
-            f.setArguments(b);
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, f).addToBackStack(null).commit();
+            f = new ToolsFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_frame, f)
+                    .commit();
+            setTitle(R.string.tools);
+        } else if (id == R.id.nav_share){
+            f = new ShareFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_frame, f)
+                    .addToBackStack(null)
+                    .commit();
             //Podemos darle un nombre a addToBackStack para que luego poder acceder directamente a ese estado de la pila
             //addToBackStack("MiEstado")
             //getSupportFragmentManager().popBackStack("MiEstado",flag);
             //Donde flag puede ser 0 o POP_BACK_STACK_INCLUSIVE
             //- 0 desapila hasta llegar al estado indicado (pero sin incluirlo)
             //- POP_BACK_STACK_INCLUSIVE desapila hasta llegar al estado indicado (incluyéndolo también)
-            setTitle(texto);
+            setTitle(R.string.share);
         }
 
         drawer.closeDrawer(GravityCompat.START);
