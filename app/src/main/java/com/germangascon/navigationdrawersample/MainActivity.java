@@ -15,9 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
 
     @Override
@@ -35,11 +37,19 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        // Obtenemos una referencia al header del Navigation para poder modificarlo en tiempo de ejecución
+        View headerView = navigationView.getHeaderView(0);
+        ImageView ivUser = headerView.findViewById(R.id.ivProfile);
+        TextView tvUser = headerView.findViewById(R.id.tvUser);
+        tvUser.setText(R.string.nav_header_title);
+        TextView tvEmail = headerView.findViewById(R.id.tvEmail);
+        tvEmail.setText(R.string.nav_header_subtitle);
+
     }
 
     @Override
     public void onBackPressed() {
-        /**
+        /*
          * Si el usuario pulsa el botón atrás mientras está mostrándose el menú del NavigationView,
          * hacemos que se cierre dicho menú, ya que el comportamiento por defecto es cerrar la
          * Activity.
@@ -53,7 +63,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflamos el menú de la ActionBar
+        // Cargamos el menú de la ActionBar
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -102,14 +112,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.content_frame, f)
-                    .addToBackStack(null)
                     .commit();
-            //Podemos darle un nombre a addToBackStack para que luego poder acceder directamente a ese estado de la pila
-            //addToBackStack("MiEstado")
-            //getSupportFragmentManager().popBackStack("MiEstado",flag);
-            //Donde flag puede ser 0 o POP_BACK_STACK_INCLUSIVE
-            //- 0 desapila hasta llegar al estado indicado (pero sin incluirlo)
-            //- POP_BACK_STACK_INCLUSIVE desapila hasta llegar al estado indicado (incluyéndolo también)
             setTitle(R.string.share);
         }
 
