@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tvUser.setText(R.string.nav_header_title);
         TextView tvEmail = headerView.findViewById(R.id.tvEmail);
         tvEmail.setText(R.string.nav_header_subtitle);
-
     }
 
     @Override
@@ -100,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .replace(R.id.content_frame, f)
                     .commit();
             setTitle(R.string.gallery);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_tools) {
             f = new ToolsFragment();
             getSupportFragmentManager()
                     .beginTransaction()
