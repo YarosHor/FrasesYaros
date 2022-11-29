@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .commit();
             setTitle(R.string.gallery);
         } else if (id == R.id.nav_tools) {
-            f = new ToolsFragment();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.content_frame, f)
