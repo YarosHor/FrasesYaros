@@ -1,4 +1,4 @@
-package com.germangascon.navigationdrawersample;
+package com.yaros.frasesYaros;
 
 import org.junit.Test;
 

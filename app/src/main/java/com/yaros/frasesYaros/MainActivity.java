@@ -1,11 +1,10 @@
-package com.germangascon.navigationdrawersample;
+package com.yaros.frasesYaros;
 
 import android.os.Bundle;
 
-import com.germangascon.navigationdrawersample.fragments.CameraFragment;
-import com.germangascon.navigationdrawersample.fragments.GalleryFragment;
-import com.germangascon.navigationdrawersample.fragments.ShareFragment;
-import com.germangascon.navigationdrawersample.fragments.ToolsFragment;
+import com.yaros.frasesYaros.fragments.FraseDiaFragment;
+import com.yaros.frasesYaros.fragments.AutorFraseFragment;
+import com.yaros.frasesYaros.fragments.CategoriaFraseFragment;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.core.view.GravityCompat;
@@ -85,34 +84,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Se ha hecho click en algún item del NavigationView
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            f = new CameraFragment();
+        if (id == R.id.nav_today) {
+            f = new FraseDiaFragment();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.content_frame, f)
                     .commit();
-            setTitle(R.string.camera);
-        } else if (id == R.id.nav_gallery) {
-            f = new GalleryFragment();
+            setTitle("Frase de hoy");
+        } else if (id == R.id.nav_author) {
+            f = new AutorFraseFragment();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.content_frame, f)
                     .commit();
-            setTitle(R.string.gallery);
-        } else if (id == R.id.nav_tools) {
-            f = new ToolsFragment();
+            setTitle("Frases por autor");
+        } else if (id == R.id.nav_category) {
+            f = new CategoriaFraseFragment();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.content_frame, f)
                     .commit();
-            setTitle(R.string.tools);
-        } else if (id == R.id.nav_share){
-            f = new ShareFragment();
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.content_frame, f)
-                    .commit();
-            setTitle(R.string.share);
+            setTitle("Frases por categoria");
         }
 
         drawer.closeDrawer(GravityCompat.START);

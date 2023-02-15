@@ -1,4 +1,4 @@
-package com.germangascon.navigationdrawersample;
+package com.yaros.frasesYaros;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.germangascon.navigationdrawersample", appContext.getPackageName());
+        assertEquals("com.yaros.frasesYaros", appContext.getPackageName());
     }
 }

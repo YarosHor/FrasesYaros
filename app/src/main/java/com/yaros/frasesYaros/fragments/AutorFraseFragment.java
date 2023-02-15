@@ -1,5 +1,6 @@
-package com.germangascon.navigationdrawersample.fragments;
+package com.yaros.frasesYaros.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,13 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.germangascon.navigationdrawersample.R;
+import com.yaros.frasesYaros.R;
 
-public class CameraFragment extends Fragment {
+public class AutorFraseFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_camera, container, false);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        return inflater.inflate(R.layout.fragment_frases_autor, container, false);
     }
 }
