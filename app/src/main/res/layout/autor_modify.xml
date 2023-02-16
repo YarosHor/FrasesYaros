@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/etvNuevoAutorProfesion"
+        android:id="@+id/etvModificarAutorProfesion"
         android:layout_width="237dp"
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
@@ -15,35 +15,57 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/tvNuevoAutorTProfesion"
-        app:layout_constraintTop_toBottomOf="@+id/etvNuevoAutorNombre" />
+        app:layout_constraintStart_toEndOf="@+id/tvModificarAutorTProfesion"
+        app:layout_constraintTop_toBottomOf="@+id/etvModificarAutorNombre" />
 
     <TextView
-        android:id="@+id/tvNuevoAutorTNombre"
+        android:id="@+id/tvModificarAutorId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvModificarAutorTID"
+        app:layout_constraintTop_toBottomOf="@+id/tvModificarAutorTitulo" />
+
+    <TextView
+        android:id="@+id/tvModificarAutorTID"
+        android:layout_width="47dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="108dp"
+        android:text="Id:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spModificarAutor" />
+
+    <TextView
+        android:id="@+id/tvModificarAutorTNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="48dp"
         android:text="Nombre:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvModificarAutorTID" />
 
     <EditText
-        android:id="@+id/etvNuevoAutorNombre"
+        android:id="@+id/etvModificarAutorNombre"
         android:layout_width="228dp"
         android:layout_height="60dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/tvNuevoAutorTNombre"
-        app:layout_constraintTop_toBottomOf="@+id/tvNuevoAutorTitulo" />
+        app:layout_constraintStart_toEndOf="@+id/tvModificarAutorTNombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvModificarAutorId" />
 
     <TextView
-        android:id="@+id/tvNuevoAutorTProfesion"
+        android:id="@+id/tvModificarAutorTProfesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -51,10 +73,10 @@
         android:layout_marginTop="52dp"
         android:text="Profesion:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNuevoAutorTNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/tvModificarAutorTNombre" />
 
     <TextView
-        android:id="@+id/tvNuevoAutorTMuerte"
+        android:id="@+id/tvModificarAutorTMuerte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -62,10 +84,10 @@
         android:layout_marginTop="48dp"
         android:text="Muerte:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNuevoAutorTProfesion" />
+        app:layout_constraintTop_toBottomOf="@+id/tvModificarAutorTProfesion" />
 
     <EditText
-        android:id="@+id/etvNuevoAutorNacimiento"
+        android:id="@+id/etvModificarAutorNacimiento"
         android:layout_width="237dp"
         android:layout_height="68dp"
         android:layout_marginStart="28dp"
@@ -74,11 +96,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/NuevoAutorTNacimiento"
-        app:layout_constraintTop_toBottomOf="@+id/etvNuevoAutorMuerte" />
+        app:layout_constraintStart_toEndOf="@+id/ModificarAutorTNacimiento"
+        app:layout_constraintTop_toBottomOf="@+id/etvModificarAutorMuerte" />
 
     <TextView
-        android:id="@+id/NuevoAutorTNacimiento"
+        android:id="@+id/ModificarAutorTNacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -86,10 +108,10 @@
         android:layout_marginTop="52dp"
         android:text="Nacimiento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNuevoAutorTMuerte" />
+        app:layout_constraintTop_toBottomOf="@+id/tvModificarAutorTMuerte" />
 
     <EditText
-        android:id="@+id/etvNuevoAutorMuerte"
+        android:id="@+id/etvModificarAutorMuerte"
         android:layout_width="230dp"
         android:layout_height="64dp"
         android:layout_marginStart="52dp"
@@ -98,33 +120,48 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/tvNuevoAutorTMuerte"
-        app:layout_constraintTop_toBottomOf="@+id/etvNuevoAutorProfesion" />
+        app:layout_constraintStart_toEndOf="@+id/tvModificarAutorTMuerte"
+        app:layout_constraintTop_toBottomOf="@+id/etvModificarAutorProfesion" />
 
     <TextView
-        android:id="@+id/tvNuevoAutorTitulo"
-        android:layout_width="205dp"
-        android:layout_height="69dp"
+        android:id="@+id/tvModificarAutorTitulo"
+        android:layout_width="258dp"
+        android:layout_height="64dp"
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="113dp"
         android:layout_marginRight="113dp"
-        android:text="Nuevo Autor"
+        android:text="Modificar Autor"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btCrearAutor"
+        android:id="@+id/btModificarAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear Autor"
+        android:text="Modificar Autor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etvNuevoAutorNacimiento" />
+        app:layout_constraintTop_toBottomOf="@+id/etvModificarAutorNacimiento" />
+
+    <Spinner
+        android:id="@+id/spModificarAutor"
+        android:layout_width="410dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:contentDescription="spinner para modificar autores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

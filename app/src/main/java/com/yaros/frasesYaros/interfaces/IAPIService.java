@@ -33,6 +33,9 @@ public interface IAPIService {
     @POST("autor/add")
     Call<Boolean> addAutor(@Body Autor autor);
 
+    @POST("autor/update")
+    Call<Boolean> updateAutor(@Body Autor autor);
+
     @POST("categoria/add")
     Call<Boolean> addCategoria(@Body Categoria categoria);
 }

@@ -33,9 +33,7 @@ import retrofit2.Response;
 
 public class NuevoAutor extends Fragment {
     private IAPIService apiService;
-    private Spinner spinner;
     private TextView tvTitulo;
-    private TextView tvId;
     private EditText etNombre;
     private EditText etProfesion;
     private EditText etMuerte;
@@ -48,9 +46,7 @@ public class NuevoAutor extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.autor_add, container, false);
         apiService = RestClient.getInstance();
-        spinner = inflatedView.findViewById(R.id.spNuevoAutor);
         tvTitulo =  inflatedView.findViewById(R.id.tvNuevoAutorTitulo);
-        tvId =  inflatedView.findViewById(R.id.tvNuevoAutorId);
         etNombre =  inflatedView.findViewById(R.id.etvNuevoAutorNombre);
         etProfesion =  inflatedView.findViewById(R.id.etvNuevoAutorProfesion);
         etMuerte =  inflatedView.findViewById(R.id.etvNuevoAutorMuerte);
@@ -59,6 +55,7 @@ public class NuevoAutor extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                autor = new Autor(etNombre.toString(), Integer.parseInt(etNacimiento.toString()), etMuerte.toString(), etProfesion.toString());
                 nuevoAutor();
             }
         });
