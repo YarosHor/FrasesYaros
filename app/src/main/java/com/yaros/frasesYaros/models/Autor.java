@@ -83,7 +83,7 @@ public class Autor {
         return id;
     }
 
-    @NonNull
+    /*@NonNull
     @Override
     public String toString() {
         return "Autor{" +
@@ -93,5 +93,21 @@ public class Autor {
                 ", muerte='" + muerte + '\'' +
                 ", profesion='" + profesion + '\'' +
                 '}';
+    }*/
+
+    @NonNull
+    @Override
+    public String toString() {
+        return nombre;
     }
+    public String all() {
+        return "Autor{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", nacimiento=" + nacimiento +
+                ", muerte='" + muerte + '\'' +
+                ", profesion='" + profesion + '\'' +
+                '}';
+    }
+
 }

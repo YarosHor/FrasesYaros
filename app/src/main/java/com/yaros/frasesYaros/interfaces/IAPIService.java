@@ -1,5 +1,7 @@
 package com.yaros.frasesYaros.interfaces;
 
+import com.yaros.frasesYaros.models.Autor;
+import com.yaros.frasesYaros.models.Categoria;
 import com.yaros.frasesYaros.models.Frase;
 
 import java.util.List;
@@ -10,22 +12,27 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface IAPIService {
-    @GET("frase/all")
-    Call<List<Frase>> getFrases();
+    @GET("frase/dia/{fecha}")
+    Call<Frase> getFraseDia(@Path("fecha") String fecha);
 
-    @GET("frase/all/")
-    Call<List<Frase>> getFraseDia(String fecha);
+    @GET("autor/{id}")
+    Call<Autor> getAutorId(@Path("id") Integer id);
 
-    @POST("frase/add")
-    Call<Boolean> addFrase(@Body Frase frase);
+    @GET("autor/all")
+    Call<List<Autor>> getAutores();
 
-    @POST("frase/addValues")
-    @FormUrlEncoded
-    Call<Boolean> addFraseValues(@Field("texto") String texto,
-                                 @Field("fechaProgramada") String fechaProgramada,
-                                 @Field("idAutor") int idAutor,
-                                 @Field("idCategoria")int idCategoria);
+    @GET("frase/autor/{id}")
+    Call<List<Frase>> getFrasesDeAutor(@Path("id") Integer id);
 
+    @GET("categoria/all")
+    Call<List<Categoria>> getCategorias();
+
+    @POST("autor/add")
+    Call<Boolean> addAutor(@Body Autor autor);
+
+    @POST("categoria/add")
+    Call<Boolean> addCategoria(@Body Categoria categoria);
 }

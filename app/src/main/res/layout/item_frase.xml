@@ -33,9 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="119dp"
         android:layout_marginLeft="119dp"
-        android:layout_marginTop="44dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/tvItemAutor"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFrase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
